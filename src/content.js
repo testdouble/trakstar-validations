@@ -23,10 +23,12 @@ let timer;
 
 const getLabel = (element) => element.innerText.split("\n")[0];
 
-const fieldChanged = (label) => (mutations) => {
+const fieldChanged = (fieldConfig) => (mutations) => {
   // TODO: Why isn't this event fired for changes to EDI?
-  console.log(label);
+  console.log(fieldConfig.label);
   console.log(mutations);
+  // TODO: check value aginst "isValid" and update the
+  // validation errors bubble (add it if not exists, delete it if none);
 };
 
 const maybeAssignTextGroup = (fieldConfigs, textGroup) => {
@@ -38,7 +40,7 @@ const maybeAssignTextGroup = (fieldConfigs, textGroup) => {
 };
 
 const startObservers = map((fieldConfig) =>
-  new MutationObserver(fieldChanged(fieldConfig.label)).observe(
+  new MutationObserver(fieldChanged(fieldConfig)).observe(
     fieldConfig.textGroup,
     {
       childList: true,
