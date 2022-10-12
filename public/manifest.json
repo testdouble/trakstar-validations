@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "Trakstar Validations",
+  "version": "0.0.1",
+  "description": "Apply validations about the state of an application",
+  "icons": {
+    "48": "icons/48.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.trakstar.com/app/*"
+      ],
+      "js": [
+        "build/content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "validations@trakstar.com"
+    }
+  },
+  "browser_action": {
+    "default_icon": "icons/48.svg",
+    "default_title": "Trakstar Validations",
+    "default_popup": "popup.html"
+  }
+}

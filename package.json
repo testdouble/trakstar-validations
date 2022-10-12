@@ -1,0 +1,19 @@
+{
+  "name": "trakstar-validations",
+  "version": "0.0.1",
+  "description": "",
+  "main": "trakstar_validations.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./esbuild.js"
+  },
+  "author": "Eric Newbury <eric@testdouble.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.25.0",
+    "esbuild": "^0.15.10"
+  },
+  "dependencies": {
+    "ramda": "^0.28.0"
+  }
+}
